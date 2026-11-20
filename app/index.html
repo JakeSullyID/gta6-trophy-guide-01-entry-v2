@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LEONIDA TROPHY GUIDE</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="app-header">
+  <div class="header-main">
+    <h1 class="display-title">LEONIDA TROPHY GUIDE</h1>
+    <p class="subtitle">55 trophies: 1 platinum, 2 gold, 6 silver, 46 bronze, 0 online — all offline single-player</p>
+  </div>
+  <div class="progress-wrap">
+    <div class="progress-stats">
+      <span id="progress-text">0 of 55 earned</span>
+      <span id="progress-pct">(0%)</span>
+    </div>
+    <div class="progress-bar-container">
+      <div id="progress-bar" class="progress-bar-fill"></div>
+    </div>
+    <div class="kind-chips" id="kind-chips">
+      <!-- Mini-counts populated dynamically: story, missable, collectible, activity, platinum -->
+    </div>
+  </div>
+</header>
+
+<nav class="tab-nav">
+  <button id="tab-checklist" class="tab-btn active" data-tab="checklist">Checklist</button>
+  <button id="tab-roadmap" class="tab-btn" data-tab="roadmap">Roadmap</button>
+  <button id="tab-missables" class="tab-btn" data-tab="missables">Missables</button>
+  <button id="tab-sources" class="tab-btn" data-tab="sources">Sources</button>
+</nav>
+
+<main class="app-main">
+  <!-- Checklist Tab -->
+  <section id="section-checklist" class="tab-section active">
+    <div class="toolbar">
+      <div class="filter-group">
+        <input type="search" id="search" placeholder="Search trophies…" aria-label="Search trophies">
+        <select id="kind-filter" aria-label="Filter by kind">
+          <option value="all">All kinds</option>
+          <option value="story">Story</option>
+          <option value="missable">Missable</option>
+          <option value="collectible">Collectible</option>
+          <option value="activity">Activity</option>
+          <option value="platinum">Platinum</option>
+          <option value="online">Online</option>
+        </select>
+        <select id="grade-filter" aria-label="Filter by grade">
+          <option value="all">All grades</option>
+          <option value="platinum">Platinum</option>
+          <option value="gold">Gold</option>
+          <option value="silver">Silver</option>
+          <option value="bronze">Bronze</option>
+        </select>
+        <label class="checkbox-label">
+          <input type="checkbox" id="earned-only"> Earned only
+        </label>
+      </div>
+      <div class="action-group">
+        <button id="spoiler-toggle" type="button" class="btn">Spoiler shield: off</button>
+        <button id="export-btn" type="button" class="btn">Export</button>
+        <label class="btn file-label" for="import-input">
+          Import
+          <input type="file" id="import-input" accept="application/json" style="display: none;">
+        </label>
+      </div>
+    </div>
+
+    <div class="content-split">
+      <ul id="trophy-list" class="trophy-list"></ul>
+      <aside id="detail-pane" class="detail-pane">
+        <div class="empty-detail">Select a trophy from the list to view its guide and details.</div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Roadmap Tab -->
+  <section id="section-roadmap" class="tab-section">
+    <div id="roadmap-content"></div>
+  </section>
+
+  <!-- Missables Tab -->
+  <section id="section-missables" class="tab-section">
+    <div id="missables-content"></div>
+  </section>
+
+  <!-- Sources Tab -->
+  <section id="section-sources" class="tab-section">
+    <div id="sources-content"></div>
+  </section>
+</main>
+
+<script type="module" src="app.js"></script>
+<script type="module" src="shots.js"></script>
+</body>
+</html>
